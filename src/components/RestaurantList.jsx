@@ -12,7 +12,7 @@ function RestaurantList() {
 
   // Fetch the list of restaurants
   useEffect(() => {
-    fetch('/api/restaurants')
+    fetch('https://kem-restaurant.onrender.com/api/restaurants')
       .then((response) => response.json())
       .then((data) => setRestaurants(data))
       .catch((error) => console.error('Error fetching restaurants:', error));
@@ -27,7 +27,7 @@ function RestaurantList() {
   // Handle form submission to create a new restaurant
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    fetch('/api/restaurants', {
+    fetch('https://kem-restaurant.onrender.com/api/restaurants', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newRestaurant),

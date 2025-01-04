@@ -10,7 +10,7 @@ function KAMList() {
   }, []);
 
   const fetchKAMs = () => {
-    fetch('/api/kams')
+    fetch('https://kem-restaurant.onrender.com/api/kams')
       .then((response) => response.json())
       .then((data) => setKams(data))
       .catch((error) => console.error('Error fetching KAMs:', error));
@@ -25,7 +25,7 @@ function KAMList() {
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    fetch('/api/kams', {
+    fetch('https://kem-restaurant.onrender.com/api/kams', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name: newKAM }),

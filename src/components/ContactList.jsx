@@ -13,7 +13,7 @@ function ContactList() {
 
   // Fetch contacts for a specific restaurant
   const fetchContacts = (id) => {
-    fetch(`/api/contacts/${id}`)
+    fetch(`https://kem-restaurant.onrender.com/api/contacts/${id}`)
       .then((response) => response.json())
       .then((data) => setContacts(data))
       .catch((error) => console.error('Error fetching contacts:', error));
@@ -39,7 +39,7 @@ function ContactList() {
   // Handle form submission to add a new contact
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    fetch('/api/contacts', {
+    fetch('https://kem-restaurant.onrender.com/api/contacts', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newContact),

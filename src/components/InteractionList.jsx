@@ -13,7 +13,7 @@ function InteractionList() {
 
   // Fetch interactions by restaurant ID
   const fetchInteractions = (id) => {
-    fetch(`/api/interactions/${id}`)
+    fetch(`https://kem-restaurant.onrender.com/api/interactions/${id}`)
       .then((response) => response.json())
       .then((data) => setInteractions(data))
       .catch((error) => console.error('Error fetching interactions:', error));
@@ -27,7 +27,7 @@ function InteractionList() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    fetch('/api/interactions', {
+    fetch('https://kem-restaurant.onrender.com/api/interactions', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newInteraction),

@@ -14,9 +14,9 @@ function Dashboard() {
     setLoading(true);
 
     Promise.all([
-      fetch('/api/dashboard/leads').then((response) => response.json()),
-      fetch('/api/dashboard/today-calls').then((response) => response.json()),
-      fetch('/api/dashboard/recent-interactions').then((response) => response.json()),
+      fetch('https://kem-restaurant.onrender.com/api/dashboard/leads').then((response) => response.json()),
+      fetch('https://kem-restaurant.onrender.com/api/dashboard/today-calls').then((response) => response.json()),
+      fetch('https://kem-restaurant.onrender.com/api/dashboard/recent-interactions').then((response) => response.json()),
     ])
       .then(([leadsData, callsData, interactionsData]) => {
         setLeads(leadsData);
@@ -38,7 +38,7 @@ function Dashboard() {
     setSearchQuery(query);
 
     if (query) {
-      fetch(`/api/dashboard/search?query=${query}`)
+      fetch(`https://kem-restaurant.onrender.com/api/dashboard/search?query=${query}`)
         .then((response) => response.json())
         .then((data) => setSearchResults(data))
         .catch((error) => console.error('Error searching leads:', error));

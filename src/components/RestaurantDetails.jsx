@@ -6,7 +6,7 @@ function RestaurantDetails() {
   const [restaurant, setRestaurant] = useState(null);
 
   useEffect(() => {
-    fetch(`/api/restaurants/${id}`)
+    fetch(`https://kem-restaurant.onrender.com/api/restaurants/${id}`)
       .then((response) => response.json())
       .then((data) => setRestaurant(data))
       .catch((error) => console.error('Error fetching restaurant details:', error));
